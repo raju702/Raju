@@ -689,6 +689,7 @@ for i in range(n):
 print("after sorting")
 print(nlist)  '''
 
+'''
 #Selection Sort
 nlist=list(map(int,input().split()))
 n=len(nlist)
@@ -699,7 +700,86 @@ for i in range(n):
             minIndex=j
     nlist[i],nlist[minIndex]=nlist[minIndex],nlist[i]
 print("after sorting")
-print(nlist)  
+print(nlist)  '''
 
 # Insertion sort
 #Bestcase:O(n), Average case:O(n2), worstcase:O(n2)
+
+'''
+# palindrome
+class sol:
+    def ispalindrome(self,x:int)->bool:
+        data=str(x)
+        reverse=data=data[::-1]
+        res=data==reverse
+        print(res)
+s=sol()
+s.ispalindrome(121)'''
+
+'''
+#merge sort is a technique divide and conquer
+def merge(arr,l,m,r):
+    n1=m-l+1
+    n2=r-m
+    L=[0]*(n1)
+    R=[0]*(n2)
+    for i in range(0,n1):
+        L[i]=arr[l+i]
+    for j in range(0,n2):
+        R[j]=arr[m+1+j]
+    i,j,k=0,0,l
+    while i<n1 and j<n2:
+        if L[i]<=R[j]:
+            arr[k]=L[i]
+            i+=1
+        else:
+            arr[k]=R[j]
+            j+=1
+        k+=1
+    while i<n1:
+        arr[k]=L[i]
+        i+=1
+        k+=1
+    while j<n2:
+        arr[k]=R[j]
+        j+=1
+        k+=1
+def mergesort(arr,l,r):
+    if l<r:
+        m=l+(r-l)//2
+        mergesort(arr,l,m)
+        mergesort(arr,m+1,r)
+        merge(arr,l,m,r)
+arr=[12,11,13,5,6,7]
+n=len(arr)
+for i in range(n):
+    print("%d" % arr[i], end=" ")
+mergesort(arr,0,n-1)
+for i in range(n):
+    print("%d" % arr[i], end="")
+    print()   
+'''
+
+'''
+# Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+class solution:
+    def isValid(self,s: str) -> bool:
+        stack=[]
+        for i in s:
+            if i=="(":
+                stack.append("(")
+            elif i=="[":
+                stack.append("]")
+            elif i=="{":
+                stack.append("}")
+            elif not stack or stack.pop()!=i:
+                return False
+        return not stack
+
+sol=solution()
+res = sol.isValid("[]")
+print(res)  '''
+
+#Quick Sort
+# pivot = first ,last,middle element,or random number
+[12,18,22,15,19,2]
