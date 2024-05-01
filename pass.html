@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blurred Transparent Background Image Example</title>
+<style>
+  /* CSS code to set background image and height */
+  body {
+    background-image: url("https://github.com/chiragsamal/Zomato/raw/master/Images/zomato.jpg"); /* Replace 'background.jpg' with the path to your image */
+    background-size: cover; /* This ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    position: relative;
+  }
+
+  /* Semi-transparent overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 550px;
+    background-color: rgba(165, 113, 113, 0.5); /* Adjust the transparency by modifying the fourth value (0.5 for 50% opacity) */
+    z-index: 1; /* Ensure the overlay is above the background image */
+    align-content: center;
+    padding-left: 50%;
+    padding-top: 20%;
+    padding-right: 50px;
+  }
+
+  /* Blurred background */
+  .blurred-background {
+    position: relative;
+    z-index: 0; /* Ensure the background image is behind the overlay */
+    filter: blur(100px); /* Adjust the blur radius as needed */
+  }
+</style>
+</head>
+<body>
+  <!-- Semi-transparent overlay -->
+  <div class="overlay"></div>
+
+  <!-- Blurred background image -->
+  <div class="blurred-background">
+    <!-- Your HTML content goes here -->
+    <h1>Hello, world!</h1>
+  </div>
+</body>
+</html>

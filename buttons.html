@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handling example</title>
+</head>
+<body>
+    <h1>click counter</h1>
+    <p>click the button to increment the counter</p>
+    <button id="inc">Increase</button>
+    <button id="dc">Decrease</button>
+    <button id="reset">Reset</button>
+    <p id="counter">counter:0</p>
+    <script>
+        let count=0;
+        function upc(){
+            document.getElementById("counter").innerText="counter: "+count; 
+        }
+        document.getElementById("inc").addEventListener("click",function(){
+            count++;
+            upc()
+        });
+        document.getElementById("dc").addEventListener("click",function(){
+            if (count>=0);
+                count--;
+            upc()
+        });
+        document.getElementById("reset").addEventListener("click",function(){
+            count=0;
+            upc()
+        });
+    </script>
+</body>
+</html> 

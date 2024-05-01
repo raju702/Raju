@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Successful</title>
+</head>
+<body>
+    <h1>Login Successful</h1>
+    <?php 
+        // Check if the 'un' parameter is set in the URL
+        if (isset($_GET['un'])) {
+            $username = $_GET['un'];
+            echo "Username: " . $username;
+        } else {
+            echo "Username not found!";
+        }
+    ?>
+    
+    <!-- Logout form -->
+    <form id="logoutForm" action="signin.html" method="get">
+        <input type="hidden" name="un" value="<?php echo $username ?>">
+        <button type="submit">Log Out</button>
+    </form>
+
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // When the Log Out button is clicked
+            $("#logoutBtn").click(function(){
+                // Set the action of the logout form dynamically with the username
+                $("#logoutForm").attr("action", "logout.php?un=<?php echo $username ?>");
+            });
+        });
+    </script>
+</body>
+</html>

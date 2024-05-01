@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUI calculator</title>
+    <style>
+        input[type="button"]{
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>calculator</h1>
+    <input type="text" id="result"disabled><br>
+    <input type="button"value="c"onclick=clearres();>
+    <input type="button"value="-"onclick="appendTOResult('-')">
+    <input type="button"value="+"onclick="appendTOResult('+')">
+    <input type="button"value="*"onclick="appendTOResult('*')">
+    <br>
+    <input type="button"value="1"onclick="appendTOResult('1')">
+    <input type="button"value="2"onclick="appendTOResult('2')">
+    <input type="button"value="3"onclick="appendTOResult('3')">
+    <input type="button"value="/"onclick="appendTOResult('/')">
+    <br>
+    <input type="button"value="4"onclick="appendTOResult('4')">
+    <input type="button"value="5"onclick="appendTOResult('5')">
+    <input type="button"value="6"onclick="appendTOResult('6')">
+    
+    <br>
+    <input type="button"value="7"onclick="appendTOResult('7')">
+    <input type="button"value="8"onclick="appendTOResult('8')">
+    <input type="button"value="9"onclick="appendTOResult('9')">
+    <br>
+    <input type="button"value="."onclick="appendTOResult('.')">
+    <input type="button"value="0"onclick="appendTOResult('0')">
+    
+    
+
+    
+    <input type="button"value="="onclick="calculate()">
+    <script>
+        function appendTOResult(value){
+            document.getElementById("result").value+=value;
+        }
+        function calculate(){
+            try{
+                let result=eval(document.getElementById("result").value);
+                document.getElementById("result").value=result;
+            }
+            catch(error){
+                document.getElementById("result").value="ERROR";
+            }
+        }
+        function clearres(){
+            document.getElementById("result").value=""
+        }
+    </script>
+    
+
+
+
+
+</body>
+</html>
